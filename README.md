@@ -25,4 +25,4 @@ Once the container is running and the shell prompt appears, `cd` into the repo d
 
 ## Known Issues
 
-The `ninja` package may not work correctly, and may return an error, causing the repo to not run.
+None.
