@@ -13,7 +13,7 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     conda init bash && \ 
     . /root/.bashrc && \ 
     conda update conda && \
-    pip install gdown
+    conda install -c conda-forge gdown
 
 # Clone GoGoDuck repo and copy python script to the folder
 RUN git clone https://github.com/PeikeLi/Self-Correction-Human-Parsing && \
