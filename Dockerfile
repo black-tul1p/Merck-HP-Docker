@@ -2,8 +2,8 @@ FROM python:slim
 RUN apt-get update && apt-get -y upgrade \ 
   && apt-get install -y --no-install-recommends \ 
     git wget g++ ca-certificates \ 
-    && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 -y
+    && rm -rf /var/lib/apt/lists/* && \
+    apt-get update && apt-get install ffmpeg libsm6 libxext6 -y
 ENV PATH="/root/miniconda3/bin:${PATH}" 
 ARG PATH="/root/miniconda3/bin:${PATH}" 
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \ 
@@ -29,9 +29,7 @@ RUN conda install -y mamba -c conda-forge
 # Install packages
 ADD ./environment.yml .
 RUN mamba env update --file ./environment.yml && \
-    conda clean -tipy && \
-    conda activate torch-gpu && \
-    conda install -c conda-forge gdown
+    conda clean -tipy
 
 # Activate env on startup and link libcudart.so
 RUN echo 'conda activate torch-gpu' >> /root/.bashrc && \

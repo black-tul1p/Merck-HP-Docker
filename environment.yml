@@ -49,6 +49,7 @@ dependencies:
   - fontconfig=2.13.1=hef1e5e3_1
   - freeglut=3.0.0=hf484d3e_5
   - freetype=2.12.1=h4a9f257_0
+  - gdown=4.6.0=pyhd8ed1ab_0
   - gds-tools=1.4.0.31=0
   - glib=2.69.1=h4ff587b_1
   - graphite2=1.3.14=h295c915_1
